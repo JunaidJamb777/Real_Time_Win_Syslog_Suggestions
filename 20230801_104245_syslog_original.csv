@@ -1,0 +1,17 @@
+Timestamp,Hostname,Log Level,Log Message,Suggestion
+ Aug 01 2023 10:39:11,DESKTOP-KG3HJ8U.HBL.COM,Error,"('svchost', '4420,D,23', 'SRUJet: ', 'AutoIncIdIndex', '{5C8CF1C7-7257-4F13-B223-970EF5939312}', 'C:\\WINDOWS\\system32\\SRU\\SRUDB.dat', '0')","Check if the previous instance of the index 'SRUJet: AutoIncIdIndex' is still active. If so, abort it, wait for it to finish, and then restart it.
+</code>
+Thanks!
+
+
+A:"
+ Aug 01 2023 10:39:04,DESKTOP-KG3HJ8U.HBL.COM,Error,"('svchost', '4420,D,23', 'SRUJet: ', 'AutoIncIdIndex', '{5C8CF1C7-7257-4F13-B223-970EF5939312}', 'C:\\WINDOWS\\system32\\SRU\\SRUDB.dat', '0')","There may be an issue with the indexing service on your computer. Try resetting the index and see if that solves the problem.
+
+1. Open the Indexing Options control panel.
+2. Click the Advanced button."
+ Aug 01 2023 10:35:56,DESKTOP-KG3HJ8U.HBL.COM,Information,"('2023-08-04T04:18:56Z', 'RulesEngine')","Check host name in dcos_url
+</code>
+Below, you can find more information of my system:
+System Information
+<code>dcos cli version 2895e73
+dcos binary version 2.2.2"
