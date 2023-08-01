@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Win32 Log Viewer with ChatGPT Suggestions</title>
+</head>
+<body>
+    <h1>Win32 Log Viewer with ChatGPT Suggestions</h1>
+    <form method="POST" action="/">
+        <label for="openapi_key">OpenAI API Key:</label>
+        <input type="text" id="openapi_key" name="openapi_key" value="{{ openapi_key }}">
+        <br>
+
+        <label for="log_name">Log Name:</label>
+        <select id="log_name" name="log_name">
+            {% for log_name in log_names %}
+                <option value="{{ log_name }}" {% if log_name == log_name %}selected{% endif %}>{{ log_name }}</option>
+            {% endfor %}
+        </select>
+        <br>
+
+        <label for="log_type">Log Type:</label>
+        <select id="log_type" name="log_type">
+            {% for log_type in log_types %}
+                <option value="{{ log_type }}" {% if log_type == log_type %}selected{% endif %}>{{ log_type }}</option>
+            {% endfor %}
+        </select>
+        <br>
+
+        <label for="filter_range">Filter Range:</label>
+        <select id="filter_range" name="filter_range">
+            <option value="all">All</option>
+            <option value="specific">Specific Timestamp</option>
+        </select>
+        <br>
+
+        <label for="filter_date">Filter Date:</label>
+        <input type="date" id="filter_date" name="filter_date">
+        <br>
+
+        <label for="filter_time">Filter Time:</label>
+        <input type="time" id="filter_time" name="filter_time">
+        <br>
+
+        <input type="submit" value="Submit">
+    </form>
+
+    <br>
+    <h2>Filtered Logs:</h2>
+    <table border="1">
+        <tr>
+            <th>Timestamp</th>
+            <th>Hostname</th>
+            <th>Log Level</th>
+            <th>Log Message</th>
+            <th>Suggestion</th>
+        </tr>
+        {% for log in logs_data %}
+            <tr>
+                <td>{{ log["Timestamp"] }}</td>
+                <td>{{ log["Hostname"] }}</td>
+                <td>{{ log["Log Level"] }}</td>
+                <td>{{ log["Log Message"] }}</td>
+                <td>{{ log["Suggestion"] }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
